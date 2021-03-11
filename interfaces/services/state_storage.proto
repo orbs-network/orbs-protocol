@@ -42,6 +42,8 @@ message GetLastCommittedBlockInfoOutput {
     primitives.node_address block_proposer_address = 3;
     primitives.timestamp_seconds current_reference_time = 4;
     primitives.timestamp_seconds prev_reference_time = 5;
+    primitives.storage_keys current_num_keys = 6;
+    primitives.storage_size_megabyte current_size = 7;
 }
 
 message CommitStateDiffInput {

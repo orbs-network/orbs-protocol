@@ -257,3 +257,31 @@ func (x Weight) Equal(y Weight) bool {
 func (x Weight) KeyForMap() uint64 {
 	return uint64(x)
 }
+
+type StorageKeys uint64
+
+func (x StorageKeys) String() string {
+	return fmt.Sprintf("%x", uint64(x))
+}
+
+func (x StorageKeys) Equal(y StorageKeys) bool {
+	return x == y
+}
+
+func (x StorageKeys) KeyForMap() uint64 {
+	return uint64(x)
+}
+
+type StorageSizeMegabyte uint64
+
+func (x StorageSizeMegabyte) String() string {
+	return fmt.Sprintf("%x", uint64(x))
+}
+
+func (x StorageSizeMegabyte) Equal(y StorageSizeMegabyte) bool {
+	return x == y
+}
+
+func (x StorageSizeMegabyte) KeyForMap() uint64 {
+	return uint64(x)
+}

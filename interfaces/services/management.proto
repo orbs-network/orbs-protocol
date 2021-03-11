@@ -48,6 +48,8 @@ message GetSubscriptionStatusInput {
 
 message GetSubscriptionStatusOutput {
     bool subscription_status_is_active = 1;
+    primitives.storage_keys subscription_max_keys = 2;
+    primitives.storage_size_megabyte subscription_max_size = 3;
 }
 
 message GetCommitteeInput {

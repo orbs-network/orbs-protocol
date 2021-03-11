@@ -127,3 +127,15 @@ message weight {
     uint64 value = 1;
     // size 8 bytes
 }
+
+message storage_keys {
+    option inline_type = "uint64";
+    uint64 value = 1;
+    // size 8 bytes
+}
+
+message storage_size_megabyte {
+    option inline_type = "uint64";
+    uint64 value = 1;
+    // size 8 bytes
+}

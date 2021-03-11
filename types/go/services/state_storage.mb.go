@@ -98,13 +98,15 @@ type GetLastCommittedBlockInfoOutput struct {
 	BlockProposerAddress primitives.NodeAddress
 	CurrentReferenceTime primitives.TimestampSeconds
 	PrevReferenceTime    primitives.TimestampSeconds
+	CurrentNumKeys       primitives.StorageKeys
+	CurrentSize          primitives.StorageSizeMegabyte
 }
 
 func (x *GetLastCommittedBlockInfoOutput) String() string {
 	if x == nil {
 		return "<nil>"
 	}
-	return fmt.Sprintf("{BlockHeight:%s,BlockTimestamp:%s,BlockProposerAddress:%s,CurrentReferenceTime:%s,PrevReferenceTime:%s,}", x.StringBlockHeight(), x.StringBlockTimestamp(), x.StringBlockProposerAddress(), x.StringCurrentReferenceTime(), x.StringPrevReferenceTime())
+	return fmt.Sprintf("{BlockHeight:%s,BlockTimestamp:%s,BlockProposerAddress:%s,CurrentReferenceTime:%s,PrevReferenceTime:%s,CurrentNumKeys:%s,CurrentSize:%s,}", x.StringBlockHeight(), x.StringBlockTimestamp(), x.StringBlockProposerAddress(), x.StringCurrentReferenceTime(), x.StringPrevReferenceTime(), x.StringCurrentNumKeys(), x.StringCurrentSize())
 }
 
 func (x *GetLastCommittedBlockInfoOutput) StringBlockHeight() (res string) {
@@ -129,6 +131,16 @@ func (x *GetLastCommittedBlockInfoOutput) StringCurrentReferenceTime() (res stri
 
 func (x *GetLastCommittedBlockInfoOutput) StringPrevReferenceTime() (res string) {
 	res = fmt.Sprintf("%s", x.PrevReferenceTime)
+	return
+}
+
+func (x *GetLastCommittedBlockInfoOutput) StringCurrentNumKeys() (res string) {
+	res = fmt.Sprintf("%s", x.CurrentNumKeys)
+	return
+}
+
+func (x *GetLastCommittedBlockInfoOutput) StringCurrentSize() (res string) {
+	res = fmt.Sprintf("%s", x.CurrentSize)
 	return
 }
 

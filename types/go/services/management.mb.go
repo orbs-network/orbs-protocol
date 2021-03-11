@@ -162,17 +162,29 @@ func (x *GetSubscriptionStatusInput) StringReference() (res string) {
 
 type GetSubscriptionStatusOutput struct {
 	SubscriptionStatusIsActive bool
+	SubscriptionMaxKeys        primitives.StorageKeys
+	SubscriptionMaxSize        primitives.StorageSizeMegabyte
 }
 
 func (x *GetSubscriptionStatusOutput) String() string {
 	if x == nil {
 		return "<nil>"
 	}
-	return fmt.Sprintf("{SubscriptionStatusIsActive:%s,}", x.StringSubscriptionStatusIsActive())
+	return fmt.Sprintf("{SubscriptionStatusIsActive:%s,SubscriptionMaxKeys:%s,SubscriptionMaxSize:%s,}", x.StringSubscriptionStatusIsActive(), x.StringSubscriptionMaxKeys(), x.StringSubscriptionMaxSize())
 }
 
 func (x *GetSubscriptionStatusOutput) StringSubscriptionStatusIsActive() (res string) {
 	res = fmt.Sprintf("%v", x.SubscriptionStatusIsActive)
+	return
+}
+
+func (x *GetSubscriptionStatusOutput) StringSubscriptionMaxKeys() (res string) {
+	res = fmt.Sprintf("%s", x.SubscriptionMaxKeys)
+	return
+}
+
+func (x *GetSubscriptionStatusOutput) StringSubscriptionMaxSize() (res string) {
+	res = fmt.Sprintf("%s", x.SubscriptionMaxSize)
 	return
 }
 
